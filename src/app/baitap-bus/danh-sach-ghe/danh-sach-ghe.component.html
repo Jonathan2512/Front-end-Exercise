@@ -1,0 +1,25 @@
+<h3 style="color: red; text-align: center">Bài Tập Đặt Vé Xe Bus</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Danh Sách Ghế</h2>
+            <ng-container *ngFor="let item of mangGhe; let index = index">
+                <app-item-ghe [ghe]="item" (eventDatGhe)="dangDatGhe($event)"></app-item-ghe>
+                <br *ngIf="(index + 1) % 4 === 0">
+            </ng-container>
+        </div>
+        <div class="col-sm-6">
+            <div class="ghe-list">
+                <h2>Ghế Đã Chọn ({{mangGheDangDat.length}})</h2>
+                <div *ngFor="let item of mangGheDangDat; let viTri = index" class="m-3">
+                    <span>Ghế : {{item.TenGhe}} - Giá : {{item.Gia}}0vnđ</span>
+                    <button class="btn btn-danger ml-2" (click)="huyGhe(item.SoGhe, viTri)">Hủy</button>
+                </div>
+            </div>
+            <ng-container *ngIf="mangGheDangDat.length > 0">
+                <label style="font-weight: bold;" class="">Tổng tiền : {{mangGheDangDat.length*1000}} vnđ</label>
+                <button class="btn btn-success ml-5" (click)="xacNhan()">Xác Nhận</button>
+            </ng-container>
+        </div>
+    </div>
+</div>
