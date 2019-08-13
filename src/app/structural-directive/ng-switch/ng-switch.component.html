@@ -1,0 +1,22 @@
+<h3>ng-switch works!</h3>
+<div [ngSwitch]="conditionSwitch">
+    <div *ngSwitchCase = "'red'" style="color: red">Red</div>
+    <div *ngSwitchCase = "'green'" style="color: green">Green</div>
+    <div *ngSwitchCase = "'blue'" style="color: blue">Blue</div>
+    <div *ngSwitchDefault style="color: orange;">Orange</div>
+</div>
+
+<select #s (change)="changeColor(s.value)">
+    <option value="red">
+        Red
+    </option>
+    <option value="green">
+        Green  
+    </option>
+    <option value="blue">
+        Blue
+    </option>
+    <option value="purple">
+        Purple
+    </option>
+</select>

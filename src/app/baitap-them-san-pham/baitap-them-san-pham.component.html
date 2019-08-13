@@ -1,0 +1,51 @@
+<h3 style="color : red">baitap-them-san-pham works!</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="form-group">
+                <label for="">Mã SP</label>
+                <input type="text" name="" #msSP class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+                <label for="">Tên SP</label>
+                <input type="text" name="" #tenSP class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+                <label for="">Giá SP</label>
+                <input type="text" name="" #giaSP class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+            <button class="btn btn-success" (click)="themSanPham(msSP.value, tenSP.value, giaSP.value)">Thêm Sản
+                Phẩm</button>
+        </div>
+        <div class="col-sm-12 mt-4 mb-4">
+            <table style="width :100%" class="table text-center">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã</th>
+                        <th>Tên</th>
+                        <th>Giá</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngIf="danhSachSanPham && danhSachSanPham.length > 0">
+                        <tr *ngFor="let sanPham of danhSachSanPham; let stt = index"
+                            [ngClass]="{bgColor : stt%2 === 0}">
+                            <td>{{stt + 1}}</td>
+                            <td>{{sanPham.maSP}}</td>
+                            <td>{{sanPham.tenSP}}</td>
+                            <td>{{sanPham.giaSP}}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<ng-template #template>
+    <div>Cybersoft</div>
+</ng-template>
+
+<!-- gọi thẳng ng-template -->
+<ng-container *ngTemplateOutlet="template"></ng-container>

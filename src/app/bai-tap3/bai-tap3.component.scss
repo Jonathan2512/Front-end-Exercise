@@ -1,0 +1,29 @@
+@mixin contents($width, $bg-color, $pd, $color) {
+    width: $width;
+    background-color: $bg-color;
+    padding: $pd;
+    color: $color;
+  }
+  
+  .header {
+    text-align: center;
+    display: block;
+    @include contents(100%, red, 40px, #fff);
+  }
+  .contents {
+    display: flex;
+    text-align: center;
+    .content {
+      @include contents(80%, orange, 100px, #fff);
+    }
+    .sidebar {
+      @include contents(20%, green, 100px, #fff);
+    }
+  }
+  
+  .footer {
+      text-align: center;
+      display: block;
+    @include contents(100%, blue, 30px, #fff);
+  }
+  

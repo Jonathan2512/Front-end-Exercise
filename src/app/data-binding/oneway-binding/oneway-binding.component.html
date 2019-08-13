@@ -1,0 +1,11 @@
+<h3 style="color: red"> Oneway Binding</h3>
+<!-- Interpolation -->
+<div>{{name}}</div>
+<!-- Property Binding -->
+<input type="text" [value]="name" #params>
+<br>
+
+<!-- Event Binding -->
+<button class="btn btn-success" (click)="eventBinding(params.value)"> Event Binding</button>
+<p>Show value here : {{name2}} </p>
+

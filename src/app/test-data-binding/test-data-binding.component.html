@@ -1,0 +1,13 @@
+<p style="font-weight: bold; font-size: 50px;">Register Form</p>
+
+<div class="form-group" style="width: 80%">
+  <label style="font-weight: bold; font-size: 20px">Email</label>
+  <input type="text" [(ngModel)]="email">
+  <label style="font-weight: bold; font-size: 20px">Fullname</label>
+  <input type="text" #fullname>
+  <br>
+  <button class="btn btn-success" (click)="submit(fullname.value)">Submit</button>
+   <br> 
+  <p>Email : {{email}}</p>
+  <p> Name : {{fullName}}</p>
+</div>

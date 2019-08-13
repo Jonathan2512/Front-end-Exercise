@@ -1,0 +1,20 @@
+<div *ngIf="status">Cybersoft</div>
+
+<button class="btn btn-success" (click)="showDiv()">Show</button>
+<button class="btn btn-danger"(click)="hideDiv()">Hidden</button>
+<button class="btn btn-info" (click)="toggle()">Toggle</button>
+<br>
+<br>
+<br>
+
+<div *ngIf="!statusLogin; else ElseContent ">
+    <button class="btn btn-danger" (click)="logOut()">Log out</button>
+    <h3>Hello</h3>
+</div>
+
+<ng-template #ElseContent>
+    <div>
+        <button class="btn btn-success" (click)="logIn()">Login</button>
+        <h3>Why not ?</h3>
+    </div>
+</ng-template>
