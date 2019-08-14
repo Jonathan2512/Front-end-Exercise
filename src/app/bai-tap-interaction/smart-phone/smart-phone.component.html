@@ -1,0 +1,11 @@
+<div class="smartphone-list">
+    <h2>BEST SMART PHONE</h2>
+    <div class="row">
+        <ng-container *ngFor="let item of arrSmartPhone">
+            <div class="col-sm-3">
+                <!-- nhan value cua emitter tu product-item-->
+                <app-product-item [product]="item" (emitFromItem)="getCurrentItem($event)"></app-product-item>
+            </div>
+        </ng-container>
+    </div>
+</div>

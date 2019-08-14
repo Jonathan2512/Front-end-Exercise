@@ -1,0 +1,10 @@
+<app-header></app-header>
+<app-carousel></app-carousel>
+<!-- nhan value cua emitter tu laptop -->
+<app-laptop (emitFromList)="getFromList($event)"></app-laptop>
+<!-- nhan value cua emitter tu smartphone -->
+<app-smart-phone (emitFromList)="getFromList($event)"></app-smart-phone>
+<app-promotion></app-promotion>
+
+<!-- binding du lieu productModal vao modal  -->
+<app-modal [product]="productModal"></app-modal>

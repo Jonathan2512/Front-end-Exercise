@@ -26,7 +26,7 @@ import { NgContentComponent } from './ng-content/ng-content.component';
 import { ItemCardComponent } from './ng-content/item-card/item-card.component';
 import { InteractionModule } from './interaction/interaction.module';
 import { BaitapBusModule} from './baitap-bus/baitap-bus.module';
-
+import { BaiTapInteractionModule} from './bai-tap-interaction/bai-tap-interaction.module';
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { BaitapBusModule} from './baitap-bus/baitap-bus.module';
     ItemCardComponent
   ],
   imports: [
+    BaiTapInteractionModule,
     BaitapBusModule,
     InteractionModule,
     BaitapThemSanPhamModule,
